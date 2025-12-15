@@ -1,50 +1,141 @@
-# Welcome to your Expo app 👋
+# 🍻 StudyBeer
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**StudyBeer** is a gamified productivity app that flips the traditional reward loop:  
+**you earn the reward only after the work is done**.
 
-## Get started
+Instead of abstract points or streaks, users work toward a **real, chosen reward** (beer, coffee, pizza, boba, etc.), reinforcing accountability while keeping the experience intentionally simple and responsible.
 
-1. Install dependencies
+This project was built end-to-end as a product + engineering exercise, with a focus on habit formation, UX clarity, and data integrity.
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## ✨ Core Idea
 
-   ```bash
-   npx expo start
-   ```
+Most productivity tools fail because:
+- rewards feel artificial
+- motivation decays quickly
+- users reward themselves *before* finishing work
 
-In the output, you'll find options to open the app in a
+**StudyBeer fixes this by enforcing a contract with your future self.**  
+Finish the tasks first → unlock the reward after.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🚀 Key Features
 
-## Get a fresh project
+### 🎯 Task-Driven Progress
+- Session-based task lists
+- Tasks must be fully completed to earn a reward
+- Automatic reset after completion
 
-When you're ready, run:
+### 🏆 Reward System (No Currency)
+- Choose a reward (beer, coffee, pizza, ice cream, etc.)
+- Tasks visually “fill” the reward via animated progress
+- One reward per completed session (configurable)
 
-```bash
-npm run reset-project
-```
+### 📊 Progress & History
+- Lifetime rewards earned
+- Reward breakdown by type
+- Session history with timestamps
+- (Optional) drill-down into tasks completed per session
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 🔐 Auth & Sync
+- Secure authentication via Supabase
+- User-scoped data with row-level security
+- Real-time sync across devices
 
-## Learn more
+### 🌐 Cross-Platform
+- iOS & Android via React Native (Expo)
+- Web demo deployed for portfolio viewing
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 🧠 Why I Built This
 
-## Join the community
+I noticed that many students (myself included) reward themselves *before* completing meaningful work — which slowly erodes discipline.
 
-Join our community of developers creating universal apps.
+I wanted to explore:
+- how **behavioral design** can encourage follow-through
+- how to keep motivation high without creating unhealthy incentives
+- how to build a calm, focused productivity tool instead of a noisy one
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+StudyBeer is intentionally minimal:  
+**clear rules, clear progress, clear reward.**
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend**
+- React Native (Expo)
+- TypeScript
+- Expo Router
+- Animated UI components
+
+**Backend**
+- Supabase (Postgres + Auth)
+- Row-Level Security (RLS)
+- Session-based reward logging
+
+**Web**
+- Expo Web
+- Deployed on Vercel
+
+---
+
+## 🧱 Data Model (High Level)
+
+- `tasks` — active session tasks
+- `drink_counters` — lifetime rewards earned
+- `drinks_history` — per-session reward log
+- `session_tasks` — completed tasks per session
+- `reward_settings` — user’s selected reward
+
+This structure allows:
+- accurate session tracking
+- reward analytics
+- future expansion (limits, streaks, insights)
+
+---
+
+## 📈 Product Thinking Highlights
+
+- Designed a **closed feedback loop** (effort → completion → reward)
+- Removed abstract currencies to increase emotional payoff
+- Prioritized data integrity (no double rewards, no race conditions)
+- Built for extensibility (new rewards, analytics, social features)
+
+---
+
+## 🌍 Live Demo
+
+👉 **Web demo:**  
+[https://studybeer.vercel.app](#)  
+*(Portfolio demo – mobile app available on request)*
+
+---
+
+## 🔮 Future Enhancements
+
+- Focus timers (Pomodoro / deep work)
+- Social accountability (friends, streak sharing)
+- Reward limits & cooldowns
+- Weekly insights & habit analytics
+- Optional premium analytics tier
+
+---
+
+## 👤 Author
+
+**Michael Dang**  
+Product-minded engineer focused on building thoughtful, user-centric systems.
+
+- Portfolio: https://michaeldang.me
+- GitHub: https://github.com/therealMichaelD
+
+---
+
+## ⚠️ Disclaimer
+
+StudyBeer promotes **responsible reward behavior**.  
+Alcohol-based rewards are optional and can be replaced with non-alcoholic alternatives at any time.
